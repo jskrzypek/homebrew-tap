@@ -1,8 +1,8 @@
 class Chntpw < Formula
   desc "The Offline NT Password Editor"
   homepage "https://github.com/Tody-Guo/chntpw"
-  url "https://github.com/jskrzypek/chntpw/archive/0.99.6-openssl@1.1.tar.gz"
-  sha256 "83fca384a76ee3330d6b5f43caa7a5a9f9319f5da41b507caa961bc62ff0917c"
+  url "https://github.com/jskrzypek/chntpw/archive/0.99.6-1.tar.gz"
+  sha256 "2c1491a04dd902bc9d15771d9f8a7451663e8ff8d3deaf8dd86404075b6de431"
   head "https://github.com/jsrkrzypek/chntpw.git"
 
   depends_on "openssl"
