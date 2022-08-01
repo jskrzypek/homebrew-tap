@@ -24,16 +24,6 @@ cask "lens-clean" do
     auto_updates false
 
     app "Lens.app", target: "LensClean.app"
-
-    preflight do
-        system "echo", "removing crap preflight..."
-        system "rm", "-rfv", "Lens.app/Contents/Resources/extensions/lenscloud-lens-extension"
-        system "rm", "-rfv", "Lens.app/Contents/Resources/extensions/telemetry"
-        system "rm", "-rfv", "Lens.app/Contents/Resources/extensions/lens-license-extension"
-        system "rm", "-rfv", "Lens.app/Contents/Resources/extensions/support-lens-extension"
-        system "rm", "-rfv", "Lens.app/Contents/Resources/extensions/survey"
-        system "xattr", "-crv", "Lens.app"
-    end
     
     postflight do
         system "echo", "removing crap postflight..."
