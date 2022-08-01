@@ -25,9 +25,24 @@ cask "lens-clean" do
 
     app "Lens.app", target: "LensClean.app"
 
+    preflight do
+        system "echo", "removing crap preflight..."
+        system "rm", "-rfv", "Lens.app/Contents/Resources/extensions/lenscloud-lens-extension"
+        system "rm", "-rfv", "Lens.app/Contents/Resources/extensions/telemetry"
+        system "rm", "-rfv", "Lens.app/Contents/Resources/extensions/lens-license-extension"
+        system "rm", "-rfv", "Lens.app/Contents/Resources/extensions/support-lens-extension"
+        system "rm", "-rfv", "Lens.app/Contents/Resources/extensions/survey"
+        system "xattr", "-crv", "Lens.app"
+    end
+    
     postflight do
-        system "rm", "-rf", "/Applications/LensClean.app/Contents/Resources/extensions/lenscloud-lens-extension"
-        system "xattr", "-cr", "/Applications/LensClean.app"
+        system "echo", "removing crap postflight..."
+        system "rm", "-rfv", "/Applications/LensClean.app/Contents/Resources/extensions/lenscloud-lens-extension"
+        system "rm", "-rfv", "/Applications/LensClean.app/Contents/Resources/extensions/telemetry"
+        system "rm", "-rfv", "/Applications/LensClean.app/Contents/Resources/extensions/lens-license-extension"
+        system "rm", "-rfv", "/Applications/LensClean.app/Contents/Resources/extensions/support-lens-extension"
+        system "rm", "-rfv", "/Applications/LensClean.app/Contents/Resources/extensions/survey"
+        system "xattr", "-crv", "/Applications/LensClean.app"
     end
   
     zap trash: [
